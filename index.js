@@ -19,3 +19,16 @@ passport.use(new Strategy({
     (accessToken, refreshToken, profile, cb) => {
         return cb(null, profile);
 }));
+
+// configure Passport authenticated session persistence.
+passport.serializeUser((user, cb) => {
+    cb(null, user);
+});
+
+passport.deserializeUser((obj, cb) => {
+    cb(null, obj);
+});
+
+// tempalte engine
+app.set('view engine', 'ejs');
+app.use('/public', express.static(path.join(__dirname, 'public')));
