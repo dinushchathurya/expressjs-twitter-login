@@ -35,3 +35,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // session handling
 app.use(require('express-session')({ secret: SESSION_SECRET, resave: true, saveUninitialized: true }));
+
+// initialize Passport and restore authentication state, if any, from the session.
+app.use(passport.initialize());
+app.use(passport.session());
