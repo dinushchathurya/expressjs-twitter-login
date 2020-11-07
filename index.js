@@ -32,3 +32,6 @@ passport.deserializeUser((obj, cb) => {
 // tempalte engine
 app.set('view engine', 'ejs');
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// session handling
+app.use(require('express-session')({ secret: SESSION_SECRET, resave: true, saveUninitialized: true }));
