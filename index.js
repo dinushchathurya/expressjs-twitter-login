@@ -42,3 +42,5 @@ app.use(passport.session());
 
 // routes directory
 app.use('/', routes);
+
+app.listen(port);
