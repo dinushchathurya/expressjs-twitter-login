@@ -39,3 +39,6 @@ app.use(require('express-session')({ secret: SESSION_SECRET, resave: true, saveU
 // initialize Passport and restore authentication state, if any, from the session.
 app.use(passport.initialize());
 app.use(passport.session());
+
+// routes directory
+app.use('/', routes);
